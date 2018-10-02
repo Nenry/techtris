@@ -26,9 +26,7 @@
   <style>
     #tetris-canvas {
       border: 5px solid rgb(78, 177, 216);
-      align-self: center;
-      align-items: center;
-      justify-self: center;
+ 
 
 
     }
@@ -47,17 +45,18 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       align-items: center;
-      justify-self: center;
-      align-content: center;
+      justify-items: center;
       width: 60%;
-      align-self: center;
       font-family: 'Orbitron', sans-serif;
+      
 
     }
 
     #page-container {
-      display: flex;
-      justify-content: center;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: end;
       margin-top: 20px;
     }
 
@@ -92,6 +91,8 @@
       justify-content: space-evenly;
       align-items: center;
 
+      justify-self: start;
+
     }
 
     #tetris-next-canvas {
@@ -111,18 +112,12 @@
       text-decoration: underline;
     }
 
-    #page-container {
-      display: flex;
-      flex-direction: column;
 
-    }
 
     .footer {
+      width: 50%;
       display: flex;
       justify-content: center;
-      width: 100%;
-      align-items: center;
-      margin-top: 50px;
     }
 
     .icon {
@@ -131,14 +126,27 @@
     }
 
     .icons-wrapper {
-      width: 8%;
+      width: 10%;
       display: flex;
       justify-content: space-between;
+      margin-top: 20px;
+      
     }
 
     .list-instructions{
       /* list-style: none; */
       text-align: start;
+      margin-bottom: 5px;
+    }
+
+
+    .sub-instructions {
+      /* width: 50px; */
+      padding-left: 50px;
+    }
+
+    .side-text{
+      width: 300px;
     }
   </style>
 
@@ -156,9 +164,9 @@
         <div id='next-piece'>Next Piece</div>
         <canvas id='tetris-next-canvas' width='150' height='155'></canvas>
         <!-- <script type="application/javascript" src="tetris.js"></script> -->
-        <div>
+        <div class='side-text'>
           <div class='sub-header'>How to play</div>
-          <ul>
+          <ul class='sub-instructions'>
             <li class='list-instructions'>Use the tile pieces to fill up a row. </li>
               <li class='list-instructions'>
                 Rows that fill up will clear and points will be rewarded.
@@ -169,7 +177,7 @@
              </li>
           </ul>
           <div class='sub-header'>Instructions</div>
-          <ul>
+          <ul class='sub-instructions'>
             <li class='list-instructions'>
               <b>Press P to Start/Pause/Unpause the game.</b>
             </li>
